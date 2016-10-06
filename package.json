@@ -1,0 +1,20 @@
+{
+  "name": "weathrly",
+  "version": "1.0.0",
+  "description": "a weather application using react",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "jhun",
+  "license": "ISC",
+  "devDependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
