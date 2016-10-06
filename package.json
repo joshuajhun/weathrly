@@ -4,7 +4,10 @@
   "description": "a weather application using react",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "webpack-dev-server --hot --inline",
+    "build": "webpack",
+    "react-test" "mocha --require test/helpers/setup.js"
   },
   "keywords": [
     "react"
@@ -15,11 +18,13 @@
     "babel": "^6.5.2",
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
+    "babel-polyfill": "^6.16.0",
     "chai": "^3.5.0",
     "enzyme": "^2.4.1",
     "mocha": "^3.1.0",
     "mocha-loader": "^1.0.0",
     "react": "^15.3.2",
+    "react-addons-test-utils": "^15.3.2",
     "react-dom": "^15.3.2",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.2"
