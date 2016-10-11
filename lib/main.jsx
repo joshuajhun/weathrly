@@ -1,6 +1,6 @@
-const React = require('react')
-const ReactDOM = require('react-dom')
-const $ = require('jquery')
+const React = require('react');
+const ReactDOM = require('react-dom');
+var $ = require('jquery');
 
 class Main extends React.Component {
   constructor() {
@@ -10,11 +10,9 @@ class Main extends React.Component {
 
   locationAccepted(e) {
     e.preventDefault();
-    this.serverRequest = $.get(this.props.source + this.state.location +',us&APPID=b251fa322d501fa69f0b7ad22bd85245', function (result) {
-      debugger
-      var cityObject = result.city
+    this.serverRequest = $.get(this.props.source + this.state.location, function (result) {
       this.setState({
-        info: cityObject
+        info: result
       });
     }.bind(this));
   }
@@ -23,22 +21,18 @@ class Main extends React.Component {
 
     return (
       <div>
-        <input placeholder='Location'
-          value={this.state.location}
-          onChange={(e) => this.setState({location: e.target.value})}
-          />
-        <input type='submit'
-          onClick={(e) => this.locationAccepted(e)} />
+        <div>
+          <input placeholder='Location'
+            value={this.state.location}
+            onChange={(e) => this.setState({location: e.target.value}) } />
+          <input type='submit'
+            onClick={(e) => this.locationAccepted(e)} />
+        </div>
       </div>
     )
   }
 }
 
-// const addRemoveLocation = () => {
-//   return (
-//     <button>Remove Location</button>
-//   )
-// }
 
 
-ReactDOM.render(<Main source='http://api.openweathermap.org/data/2.5/forecast?q=' />, document.getElementById('application'))
+ReactDOM.render(<Main source='https://pacific-shelf-52361.herokuapp.com/api/weather/' />, document.getElementById('application'))
