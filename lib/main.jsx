@@ -1,10 +1,9 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
-var $ = require('jquery');
 
 class Main extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {location: ''};
   }
 
@@ -28,11 +27,13 @@ class Main extends React.Component {
           <input type='submit'
             onClick={(e) => this.locationAccepted(e)} />
         </div>
+        <Cards/>
       </div>
     )
   }
 }
 
+// b251fa322d501fa69f0b7ad22bd85245
 
 
 ReactDOM.render(<Main source='https://pacific-shelf-52361.herokuapp.com/api/weather/' />, document.getElementById('application'))
